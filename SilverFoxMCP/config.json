@@ -1,0 +1,70 @@
+{
+  "detection_config": {
+    "time_range_hours": 24,
+    "max_results": 500,
+    "scan_paths": [
+      "C:\\Windows\\Temp",
+      "C:\\Users",
+      "C:\\ProgramData"
+    ],
+    "exclude_paths": [
+      "C:\\Windows\\System32",
+      "C:\\Windows\\SysWOW64",
+      "C:\\Program Files",
+      "C:\\Program Files (x86)"
+    ],
+    "suspicious_file_extensions": [
+      ".exe",
+      ".dll",
+      ".sys",
+      ".ps1",
+      ".bat",
+      ".vbs",
+      ".cmd",
+      ".hta",
+      ".scr",
+      ".js",
+      ".vbe",
+      ".wsf"
+    ],
+    "event_log_sources": [
+      "Security",
+      "System",
+      "Application",
+      "Microsoft-Windows-PowerShell/Operational",
+      "Microsoft-Windows-WMI-Activity/Operational",
+      "Microsoft-Windows-Sysmon/Operational",
+      "Microsoft-Windows-TerminalServices-LocalSessionManager/Operational"
+    ],
+    "min_file_size_bytes": 1024,
+    "max_file_size_mb": 100
+  },
+  "report_config": {
+    "output_dir": "C:\\incident_reports",
+    "format": "markdown",
+    "include_remediation": true,
+    "severity_levels": ["critical", "high", "medium", "low"],
+    "include_timeline": true,
+    "include_ioc_list": true,
+    "include_process_tree": true
+  },
+  "whitelist": {
+    "processes": [
+      "System",
+      "Registry",
+      "smss.exe",
+      "csrss.exe",
+      "wininit.exe",
+      "services.exe",
+      "lsass.exe",
+      "svchost.exe",
+      "winlogon.exe",
+      "explorer.exe"
+    ],
+    "paths": [
+      "C:\\Windows\\System32",
+      "C:\\Windows\\SysWOW64",
+      "C:\\Program Files\\Windows Defender"
+    ]
+  }
+}

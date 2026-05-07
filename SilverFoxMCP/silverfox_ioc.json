@@ -1,0 +1,96 @@
+{
+  "silverfox_ioc": {
+    "file_paths": [
+      "C:\\Users\\Public\\*.exe",
+      "C:\\Users\\*\\AppData\\Local\\Temp\\*.exe",
+      "C:\\Users\\*\\AppData\\Roaming\\*.exe",
+      "C:\\ProgramData\\*.exe",
+      "C:\\Windows\\Temp\\*.exe",
+      "C:\\Users\\*\\Downloads\\*.exe"
+    ],
+    "process_names": [
+      "svchost0.exe",
+      "csrss0.exe",
+      "lsass0.exe",
+      "explorer0.exe",
+      "winlogon0.exe",
+      "smss0.exe",
+      "services0.exe",
+      "spoolsv0.exe"
+    ],
+    "registry_keys": [
+      "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\*",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run\\*",
+      "HKLM\\SYSTEM\\CurrentControlSet\\Services\\*",
+      "HKCU\\Software\\Classes\\CLSID\\*\\InprocServer32",
+      "HKLM\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit_DLLs"
+    ],
+    "network_indicators": {
+      "suspicious_ports": [443, 8443, 4443, 9443, 8080, 8888, 3389],
+      "c2_domains": [],
+      "c2_ips": []
+    },
+    "file_hashes": {
+      "sha256": []
+    },
+    "suspicious_keywords": [
+      "医疗",
+      "税务",
+      "补贴",
+      "update",
+      "installer",
+      "setup"
+    ]
+  },
+  "lateral_movement_indicators": {
+    "event_ids": {
+      "wmi": [5857, 5858, 5859, 5860, 5861],
+      "rdp": [4624, 4778, 4779],
+      "smb": [5140, 5145],
+      "service_install": [7045],
+      "process_creation": [4688],
+      "privilege_use": [4672],
+      "logon": [4624, 4625],
+      "account_logon": [4776, 4777]
+    },
+    "suspicious_services": [
+      "PSEXESVC",
+      "PAExec",
+      "RemCom",
+      "BTOBTO"
+    ],
+    "suspicious_processes": [
+      "psexec.exe",
+      "psexec64.exe",
+      "paexec.exe",
+      "remcom.exe",
+      "wmiprvse.exe",
+      "scrcons.exe",
+      "wmic.exe",
+      "powershell.exe",
+      "cmd.exe"
+    ],
+    "suspicious_shares": [
+      "\\\\*\\C$",
+      "\\\\*\\ADMIN$",
+      "\\\\*\\IPC$"
+    ],
+    "suspicious_commands": [
+      "net use",
+      "net view",
+      "net user",
+      "net group",
+      "net localgroup",
+      "wmic",
+      "psexec",
+      "sc create",
+      "schtasks",
+      "reg add",
+      "powershell -enc",
+      "powershell -e",
+      "iex",
+      "invoke-expression",
+      "downloadstring"
+    ]
+  }
+}
