@@ -72,7 +72,7 @@ pip install fastmcp psutil pefile requests pywin32
 ### 1. 克隆或下载代码
 
 ```bash
-cd C:\Users\wubo1\Downloads\wuwenMCP
+git clone https://github.com/MorStardust/DetectSilverFox.git
 ```
 
 ### 2. 安装依赖
